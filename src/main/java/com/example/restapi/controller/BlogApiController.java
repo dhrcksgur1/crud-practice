@@ -55,4 +55,12 @@ public class BlogApiController {
                 .body(updatedArticle);    //바디에 수정된 데이터 객체
 
     }
+
+    @DeleteMapping("/api/articles/{id}")
+    public ResponseEntity<Void> deleteArticle(@PathVariable("id") long id) {
+        blogService.delete(id);
+
+        return ResponseEntity.ok()
+                .build();
+    }
 }

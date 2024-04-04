@@ -36,4 +36,8 @@ public class BlogService {
         article.update(request.getTitle(),request.getContent());
         return article;
     }
+
+    public void delete(long id){
+        blogRepository.deleteById(id);
+    }
 }
